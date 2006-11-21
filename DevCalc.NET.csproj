@@ -76,10 +76,12 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
@@ -92,6 +94,9 @@
     <Compile Include="Constant.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="OperatorE.cs" />
+    <Compile Include="OperatorLog2.cs" />
+    <Compile Include="OperatorLn.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +118,7 @@
     <Compile Include="OperatorDivide.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="OperatorLog.cs" />
     <Compile Include="OperatorMinus.cs">
       <SubType>Code</SubType>
     </Compile>

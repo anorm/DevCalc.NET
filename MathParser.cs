@@ -14,15 +14,19 @@ namespace DevCalc.NET
         public MathParser()
         {
             operators = new ArrayList();
-            operators.Add(new DictionaryEntry("pi", typeof(OperatorPI)));
-            operators.Add(new DictionaryEntry("sin", typeof(OperatorSinus)));
+            operators.Add(new DictionaryEntry("pi",       typeof(OperatorPI)));
+            operators.Add(new DictionaryEntry("e",        typeof(OperatorE)));
+            operators.Add(new DictionaryEntry("sin",      typeof(OperatorSinus)));
+            operators.Add(new DictionaryEntry("ln",       typeof(OperatorLn)));
+            operators.Add(new DictionaryEntry("lb",       typeof(OperatorLog2)));
+            operators.Add(new DictionaryEntry("log",      typeof(OperatorLog)));
             operators.Add(new DictionaryEntry("tverrsum", typeof(OperatorTverrsum)));
-            operators.Add(new DictionaryEntry("sqrt", typeof(OperatorSqrt)));
-            operators.Add(new DictionaryEntry("^", typeof(OperatorPower)));
-            operators.Add(new DictionaryEntry("*", typeof(OperatorMultiply)));
-            operators.Add(new DictionaryEntry("/", typeof(OperatorDivide)));
-            operators.Add(new DictionaryEntry("-", typeof(OperatorMinus)));
-            operators.Add(new DictionaryEntry("+", typeof(OperatorPlus)));
+            operators.Add(new DictionaryEntry("sqrt",     typeof(OperatorSqrt)));
+            operators.Add(new DictionaryEntry("^",        typeof(OperatorPower)));
+            operators.Add(new DictionaryEntry("/",        typeof(OperatorDivide)));
+            operators.Add(new DictionaryEntry("*",        typeof(OperatorMultiply)));
+            operators.Add(new DictionaryEntry("-",        typeof(OperatorMinus)));
+            operators.Add(new DictionaryEntry("+",        typeof(OperatorPlus)));
         }
 
         public double Parse(string expression)
