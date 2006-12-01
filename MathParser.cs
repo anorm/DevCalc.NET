@@ -20,7 +20,7 @@ namespace DevCalc.NET
             operators.Add(new DictionaryEntry("ln",       typeof(OperatorLn)));
             operators.Add(new DictionaryEntry("lb",       typeof(OperatorLog2)));
             operators.Add(new DictionaryEntry("log",      typeof(OperatorLog)));
-            operators.Add(new DictionaryEntry("tverrsum", typeof(OperatorTverrsum)));
+            operators.Add(new DictionaryEntry("tsum",     typeof(OperatorTverrsum)));
             operators.Add(new DictionaryEntry("sqrt",     typeof(OperatorSqrt)));
             operators.Add(new DictionaryEntry("^",        typeof(OperatorPower)));
             operators.Add(new DictionaryEntry("/",        typeof(OperatorDivide)));
