@@ -34,6 +34,8 @@ namespace DevCalc.NET
 			parser = new MathParser();
             log = "";
 
+            txtInput.Text = "help";
+
 		}
 
 		/// <summary>
