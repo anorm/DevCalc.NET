@@ -252,6 +252,7 @@ namespace DevCalc.NET
             frm.HelpText += "  lb   - Logarithm (base 2)" + "\r\n";
             frm.HelpText += "  log  - Logarithm (base 10)" + "\r\n";
             frm.HelpText += "  tsum - Tverrsum" + "\r\n";
+            frm.HelpText += "  kurs - Exchange (parameter is USD/EUR/SEK etc." + "\r\n";
             frm.HelpText += "\r\n";
             frm.HelpText += "Constants:\r\n";
             frm.HelpText += "  pi   - 3.14..." + "\r\n";
