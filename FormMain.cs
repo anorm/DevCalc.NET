@@ -176,8 +176,19 @@ namespace DevCalc.NET
 		{
 			if(e.KeyData == Keys.Enter)
 			{
-                log = GetLogEntry(txtInput.Text) + log;
-                txtOutput.Text = log;
+                if(txtInput.Text.ToLower() == "help")
+                {
+                    operatorsConstantsToolStripMenuItem_Click(this, EventArgs.Empty);
+                }
+                else if(txtInput.Text.ToLower() == "exit")
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    log = GetLogEntry(txtInput.Text) + log;
+                    txtOutput.Text = log;
+                }
 				txtInput.SelectAll();
 			}
 			else if(e.KeyData == Keys.Escape)
@@ -194,6 +205,16 @@ namespace DevCalc.NET
         private string GetLogEntry(string expression)
         {
             string ret = expression + "\r\n = ";
+            if(expression.ToLower() == "help")
+            {
+                ret += "Press ENTER to show help\r\n\r\n";
+                return ret;
+            }
+            else if(expression.ToLower() == "exit")
+            {
+                ret += "Press ENTER to exit DevCalc.NET\r\n\r\n";
+                return ret;
+            }
             try
             {
                 double dResult = parser.Parse(expression);
@@ -235,6 +256,7 @@ namespace DevCalc.NET
             frm.HelpText += "  e    - 2.7..." + "\r\n";
             frm.Show();
             frm.DesktopLocation = new Point(DesktopLocation.X + DesktopBounds.Width, DesktopLocation.Y);
+            this.BringToFront();
         }
 	}
 }
