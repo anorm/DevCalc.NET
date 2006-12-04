@@ -14,6 +14,7 @@ namespace DevCalc.NET
         public MathParser()
         {
             operators = new ArrayList();
+            operators.Add(new DictionaryEntry("kurs",     typeof(OperatorKurs)));
             operators.Add(new DictionaryEntry("pi",       typeof(OperatorPI)));
             operators.Add(new DictionaryEntry("e",        typeof(OperatorE)));
             operators.Add(new DictionaryEntry("sin",      typeof(OperatorSinus)));
@@ -164,7 +165,14 @@ namespace DevCalc.NET
             }
             else
             {
-                return new Constant(double.Parse(val));
+                try
+                {
+                    return new Constant(double.Parse(val));
+                }
+                catch
+                {
+                    return new StringExpression(val);
+                }
             }
         }
     }

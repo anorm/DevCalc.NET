@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="ValutaDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="valuta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="overskrift" type="xs:string" minOccurs="0" />
+        <xs:element name="oppdatert" type="xs:string" minOccurs="0" />
+        <xs:element name="valutakurs" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="land" type="xs:string" minOccurs="0" />
+              <xs:element name="isokode" type="xs:string" minOccurs="0" />
+              <xs:element name="kode" type="xs:string" minOccurs="0" />
+              <xs:element name="enhet" type="xs:string" minOccurs="0" />
+              <xs:element name="navn" type="xs:string" minOccurs="0" />
+              <xs:element name="navn2" type="xs:string" minOccurs="0" />
+              <xs:element name="overforsel" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kjop" type="xs:string" minOccurs="0" />
+                    <xs:element name="salg" type="xs:string" minOccurs="0" />
+                    <xs:element name="endring" type="xs:string" minOccurs="0" />
+                    <xs:element name="forrige" type="xs:string" minOccurs="0" />
+                    <xs:element name="midtkurs" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="seddel" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kjop" type="xs:string" minOccurs="0" />
+                    <xs:element name="salg" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValutaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="valuta" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
