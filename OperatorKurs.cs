@@ -39,7 +39,9 @@ namespace DevCalc.NET
                 if(valuta.kode.ToLower() == symbol.ToLower())
                 {
                     ValutaDataSet.overforselRow[] o = valuta.GetoverforselRows();
-                    return double.Parse(o[0].salg.Replace('.', System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                    double temp = double.Parse(o[0].salg.Replace('.', System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                    temp = temp / double.Parse(valuta.enhet.Replace('.', System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                    return temp;
                 }
             }
             throw new Exception("Unable to find symbol");
