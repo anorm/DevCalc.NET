@@ -18,6 +18,11 @@ namespace DevCalc.NET
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 		private MathParser parser;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem operatorsConstantsToolStripMenuItem;
         private string log;
 
 		public FormMain()
@@ -56,6 +61,12 @@ namespace DevCalc.NET
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.txtInput = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operatorsConstantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
@@ -63,9 +74,9 @@ namespace DevCalc.NET
             this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInput.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInput.Location = new System.Drawing.Point(8, 8);
+            this.txtInput.Location = new System.Drawing.Point(8, 27);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(488, 26);
+            this.txtInput.Size = new System.Drawing.Size(506, 26);
             this.txtInput.TabIndex = 0;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
@@ -77,23 +88,69 @@ namespace DevCalc.NET
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOutput.BackColor = System.Drawing.Color.White;
             this.txtOutput.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutput.Location = new System.Drawing.Point(8, 48);
+            this.txtOutput.Location = new System.Drawing.Point(8, 59);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(488, 272);
+            this.txtOutput.Size = new System.Drawing.Size(506, 288);
             this.txtOutput.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operatorsConstantsToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // operatorsConstantsToolStripMenuItem
+            // 
+            this.operatorsConstantsToolStripMenuItem.Name = "operatorsConstantsToolStripMenuItem";
+            this.operatorsConstantsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.operatorsConstantsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.operatorsConstantsToolStripMenuItem.Text = "Operators && Constants";
+            this.operatorsConstantsToolStripMenuItem.Click += new System.EventHandler(this.operatorsConstantsToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(504, 326);
+            this.ClientSize = new System.Drawing.Size(522, 353);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.txtInput);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "DevCalc.NET (C) 2006 Anders Norman";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +163,9 @@ namespace DevCalc.NET
 		[STAThread]
 		static void Main() 
 		{
-			if(ApplicationInstanceLimiter.Limit())
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            if(ApplicationInstanceLimiter.Limit())
 			{
 				return;
 			}
@@ -148,6 +207,34 @@ namespace DevCalc.NET
             }
             ret += "\r\n\r\n";
             return ret;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void operatorsConstantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelp frm = new FormHelp();
+            frm.HelpText = "Available operators:\r\n";
+            frm.HelpText += "  +    - Add" + "\r\n";
+            frm.HelpText += "  -    - Subtract" + "\r\n";
+            frm.HelpText += "  *    - Multiply" + "\r\n";
+            frm.HelpText += "  /    - Divide" + "\r\n";
+            frm.HelpText += "  ^    - Power" + "\r\n";
+            frm.HelpText += "  sqrt - Square root" + "\r\n";
+            frm.HelpText += "  sin  - Sinus" + "\r\n";
+            frm.HelpText += "  ln   - Logarithm (base e)" + "\r\n";
+            frm.HelpText += "  lb   - Logarithm (base 2)" + "\r\n";
+            frm.HelpText += "  log  - Logarithm (base 10)" + "\r\n";
+            frm.HelpText += "  tsum - Tverrsum" + "\r\n";
+            frm.HelpText += "\r\n";
+            frm.HelpText += "Constants:\r\n";
+            frm.HelpText += "  pi   - 3.14..." + "\r\n";
+            frm.HelpText += "  e    - 2.7..." + "\r\n";
+            frm.Show();
+            frm.DesktopLocation = new Point(DesktopLocation.X + DesktopBounds.Width, DesktopLocation.Y);
         }
 	}
 }
