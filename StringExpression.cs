@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
     class StringExpression : MathNode
     {

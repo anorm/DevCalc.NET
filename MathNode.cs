@@ -1,6 +1,6 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
 	public abstract class MathNode
 	{

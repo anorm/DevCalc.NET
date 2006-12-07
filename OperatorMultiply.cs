@@ -1,21 +1,11 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorMultiply : Operator
+    [SymbolAttribute("*")]
+    [OperandCountAttribute(2)]
+    class OperatorMultiply : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 2;
-			}
-		}
-
-		public OperatorMultiply() : base()
-		{
-		}
-
 		public override double Evaluate()
 		{
 			return Children[0].Evaluate() * Children[1].Evaluate();

@@ -1,31 +1,14 @@
-using System;
-
-namespace DevCalc.NET
+[DevCalcNET.SymbolAttribute("-")]
+[DevCalcNET.OperandCountAttribute(2)]
+class OperatorMinus : DevCalcNET.Operator
 {
-	public class OperatorMinus : Operator
+	public override double Evaluate()
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 2;
-			}
-		}
+		return Children[0].Evaluate() - Children[1].Evaluate();
+	}
 
-		public OperatorMinus()
-		{
-		}
-
-		public override double Evaluate()
-		{
-			return Children[0].Evaluate() - Children[1].Evaluate();
-		}
-
-		public override string ToString()
-		{
-			return "(" + Children[0].ToString() + " - " + Children[1].ToString() + ")";
-		}
-
-
+	public override string ToString()
+	{
+		return "(" + Children[0].ToString() + " - " + Children[1].ToString() + ")";
 	}
 }

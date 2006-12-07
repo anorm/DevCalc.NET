@@ -1,18 +1,12 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorDivide : Operator
+    [SymbolAttribute("/")]
+    [OperandCountAttribute(2)]
+    class OperatorDivide : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 2;
-			}
-		}
-
-		public OperatorDivide()
+        public OperatorDivide()
 		{
 		}
 

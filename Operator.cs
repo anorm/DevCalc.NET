@@ -1,13 +1,21 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public abstract class Operator : MathNode
+    public abstract class Operator : MathNode
 	{
-		public abstract int OperandCount
-		{
-			get;
-		}
+        public int OperandCount
+        {
+            get
+            {
+                object[] attrs = this.GetType().GetCustomAttributes(typeof(OperandCountAttribute), false);
+                if(attrs.Length == 0)
+                {
+                    throw new Exception(string.Format("Operator {0} does not specify OperandCount", this.GetType().Name));
+                }
+                return ((OperandCountAttribute)attrs[0]).Count;
+            }
+        }
 
 		private MathNodeCollection children;
 		public MathNodeCollection Children

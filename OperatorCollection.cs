@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorCollection : CollectionBase
+	class OperatorCollection : CollectionBase
 	{
 		public Operator this[ int index ]  
 		{

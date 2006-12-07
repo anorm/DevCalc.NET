@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
 	public class MathNodeCollection : CollectionBase
 	{

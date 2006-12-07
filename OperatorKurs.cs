@@ -7,16 +7,13 @@ using System.Xml.XPath;
 using System.Windows.Forms;
 using System.Data;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	class OperatorKurs : Operator
+    [SymbolAttribute("kurs")]
+    [OperandCountAttribute(1)]
+    class OperatorKurs : Operator
     {
         static ValutaDataSet data = null;
-
-        public override int OperandCount
-        {
-            get { return 1; }
-        }
 
         public OperatorKurs()
         {

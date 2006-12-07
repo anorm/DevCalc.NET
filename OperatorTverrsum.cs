@@ -1,21 +1,11 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorTverrsum : Operator
+    [SymbolAttribute("tsum")]
+    [OperandCountAttribute(1)]
+    class OperatorTverrsum : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 1;
-			}
-		}
-
-		public OperatorTverrsum()
-		{
-		}
-
 		public override double Evaluate()
 		{
 			int i = (int)Children[0].Evaluate();

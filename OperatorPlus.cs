@@ -1,21 +1,11 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorPlus : Operator
+    [SymbolAttribute("+")]
+    [OperandCountAttribute(2)]
+    class OperatorPlus : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 2;
-			}
-		}
-
-		public OperatorPlus()
-		{
-		}
-
 		public override double Evaluate()
 		{
 			return Children[0].Evaluate() + Children[1].Evaluate();

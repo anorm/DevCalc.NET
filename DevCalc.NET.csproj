@@ -17,7 +17,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DevCalc.NET</RootNamespace>
+    <RootNamespace>DevCalcNET</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -100,6 +100,7 @@
     <Compile Include="FormHelp.Designer.cs">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperandCountAttribute.cs" />
     <Compile Include="OperatorE.cs" />
     <Compile Include="OperatorKurs.cs" />
     <Compile Include="OperatorLog2.cs" />
@@ -156,7 +157,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Settings1.cs" />
     <Compile Include="StringExpression.cs" />
+    <Compile Include="SymbolAttribute.cs" />
     <Compile Include="ValutaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

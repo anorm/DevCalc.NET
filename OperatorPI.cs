@@ -1,18 +1,12 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorPI : Operator
+    [SymbolAttribute("pi")]
+    [OperandCountAttribute(0)]
+	class OperatorPI : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 0;
-			}
-		}
-
-		public OperatorPI()
+        public OperatorPI()
 		{
 		}
 

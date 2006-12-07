@@ -1,8 +1,8 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class Constant : MathNode
+	class Constant : MathNode
 	{
 		private double val;
 
@@ -20,7 +20,5 @@ namespace DevCalc.NET
 		{
 			return string.Format("{0}", val);
 		}
-
-
 	}
 }

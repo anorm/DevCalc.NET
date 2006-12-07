@@ -1,33 +1,59 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-    /// <summary>
-    /// Summary description for MathParser.
-    /// </summary>
-    public class MathParser
+    class MathParser
     {
-        private ArrayList operators;
+        private struct OperatorData
+        {
+            public Type   operatorType;
+            public string symbol;
+        }
+
+        private List<OperatorData> operators;
 
         public MathParser()
         {
-            operators = new ArrayList();
-            operators.Add(new DictionaryEntry("kurs",     typeof(OperatorKurs)));
-            operators.Add(new DictionaryEntry("pi",       typeof(OperatorPI)));
-            operators.Add(new DictionaryEntry("e",        typeof(OperatorE)));
-            operators.Add(new DictionaryEntry("sin",      typeof(OperatorSinus)));
-            operators.Add(new DictionaryEntry("ln",       typeof(OperatorLn)));
-            operators.Add(new DictionaryEntry("lb",       typeof(OperatorLog2)));
-            operators.Add(new DictionaryEntry("log",      typeof(OperatorLog)));
-            operators.Add(new DictionaryEntry("tsum",     typeof(OperatorTverrsum)));
-            operators.Add(new DictionaryEntry("sqrt",     typeof(OperatorSqrt)));
-            operators.Add(new DictionaryEntry("^",        typeof(OperatorPower)));
-            operators.Add(new DictionaryEntry("/",        typeof(OperatorDivide)));
-            operators.Add(new DictionaryEntry("*",        typeof(OperatorMultiply)));
-            operators.Add(new DictionaryEntry("-",        typeof(OperatorMinus)));
-            operators.Add(new DictionaryEntry("+",        typeof(OperatorPlus)));
+            operators = new List<OperatorData>();
+
+            ResetOperators();
+        }
+
+        public void ResetOperators()
+        {
+            operators.Clear();
+
+            AddOperator(typeof(OperatorKurs));
+            AddOperator(typeof(OperatorPI));
+            AddOperator(typeof(OperatorE));
+            AddOperator(typeof(OperatorSinus));
+            AddOperator(typeof(OperatorLn));
+            AddOperator(typeof(OperatorLog2));
+            AddOperator(typeof(OperatorLog));
+            AddOperator(typeof(OperatorTverrsum));
+            AddOperator(typeof(OperatorSqrt));
+            AddOperator(typeof(OperatorPower));
+            AddOperator(typeof(OperatorDivide));
+            AddOperator(typeof(OperatorMultiply));
+            AddOperator(typeof(OperatorMinus));
+            AddOperator(typeof(OperatorPlus));
+        }
+
+        public void AddOperator(Type operatorType)
+        {
+            OperatorData data = new OperatorData();
+            data.operatorType = operatorType;
+            object[] attrs = operatorType.GetCustomAttributes(typeof(SymbolAttribute), false);
+            if(attrs.Length == 0)
+            {
+                throw new Exception(string.Format("Operator {0} does not specify SymbolAttribute", operatorType.Name));
+            }
+
+            data.symbol = ((SymbolAttribute)attrs[0]).Name;
+            operators.Add(data);
         }
 
         public double Parse(string expression)
@@ -45,9 +71,9 @@ namespace DevCalc.NET
 
             string exp = expression;
 
-            foreach (DictionaryEntry op in operators)
+            foreach (OperatorData op in operators)
             {
-                string s = (string)op.Key;
+                string s = op.symbol;
                 exp = exp.Replace(s, " " + s + " ");
             }
             exp = exp.Replace("(", " ( ");
@@ -90,7 +116,7 @@ namespace DevCalc.NET
                 MathNode node = MakeNode(part);
                 nodes.Add(node);
             }
-            foreach (DictionaryEntry op in operators)
+            foreach (OperatorData op in operators)
             {
                 bool found;
                 do
@@ -98,7 +124,7 @@ namespace DevCalc.NET
                     found = false;
                     for (int i = 0; i < nodes.Count; i++)
                     {
-                        if (nodes[i].GetType() == op.Value)
+                        if (nodes[i].GetType() == op.operatorType)
                         {
                             Operator oper = (Operator)nodes[i];
                             if (oper.OperandCount == oper.Children.Count)
@@ -130,12 +156,12 @@ namespace DevCalc.NET
         private MathNode MakeNode(string val)
         {
             val = val.Trim();
-            foreach (DictionaryEntry op in operators)
+            foreach (OperatorData op in operators)
             {
-                string s = (string)op.Key;
+                string s = op.symbol;
                 if (s.ToUpper() == val.ToUpper())
                 {
-                    Type t = op.Value as Type;
+                    Type t = op.operatorType;
                     Operator o = (Operator)(t.InvokeMember("", System.Reflection.BindingFlags.CreateInstance, null, null, null));
                     return o;
                 }

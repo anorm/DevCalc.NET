@@ -2,17 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
+    [SymbolAttribute("ln")]
+    [OperandCountAttribute(1)]
     class OperatorLn : Operator
     {
         public OperatorLn()
         {
-        }
-
-        public override int OperandCount
-        {
-            get { return 1; }
         }
 
         public override double Evaluate()

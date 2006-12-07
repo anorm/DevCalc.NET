@@ -1,24 +1,11 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	/// <summary>
-	/// Summary description for OperatorPower.
-	/// </summary>
-	public class OperatorPower : Operator
+    [SymbolAttribute("^")]
+    [OperandCountAttribute(2)]
+    class OperatorPower : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 2;
-			}
-		}
-
-		public OperatorPower() : base()
-		{
-		}
-
 		public override double Evaluate()
 		{
 			return Math.Pow(Children[0].Evaluate(), Children[1].Evaluate());

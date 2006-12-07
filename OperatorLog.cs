@@ -2,19 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
+    [SymbolAttribute("log")]
+    [OperandCountAttribute(1)]
     class OperatorLog : Operator
     {
-        public OperatorLog()
-        {
-        }
-
-        public override int OperandCount
-        {
-            get { return 1; }
-        }
-
         public override double Evaluate()
         {
             return Math.Log(Children[0].Evaluate(), 10);

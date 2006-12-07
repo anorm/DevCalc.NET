@@ -1,17 +1,11 @@
 using System;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
-	public class OperatorSqrt : Operator
+    [SymbolAttribute("sqrt")]
+    [OperandCountAttribute(1)]
+    class OperatorSqrt : Operator
 	{
-		public override int OperandCount
-		{
-			get
-			{
-				return 1;
-			}
-		}
-
 		public OperatorSqrt()
 		{
 		}

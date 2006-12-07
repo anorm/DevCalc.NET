@@ -2,17 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
+    [SymbolAttribute("lb")]
+    [OperandCountAttribute(1)]
     class OperatorLog2 : Operator
     {
         public OperatorLog2()
         {
-        }
-
-        public override int OperandCount
-        {
-            get { return 1; }
         }
 
         public override double Evaluate()

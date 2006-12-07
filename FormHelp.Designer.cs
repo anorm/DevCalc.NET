@@ -1,4 +1,4 @@
-namespace DevCalc.NET
+namespace DevCalcNET
 {
     partial class FormHelp
     {

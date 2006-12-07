@@ -3,13 +3,17 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
 
-namespace DevCalc.NET
+namespace DevCalcNET
 {
 	/// <summary>
 	/// Summary description for Form1.
 	/// </summary>
-	public class FormMain : System.Windows.Forms.Form
+	class FormMain : System.Windows.Forms.Form
 	{
 		private System.Windows.Forms.TextBox txtInput;
 		private System.Windows.Forms.TextBox txtOutput;
@@ -36,6 +40,47 @@ namespace DevCalc.NET
 
             txtInput.Text = "help";
 
+            string[] operatorFiles = Directory.GetFiles(Properties.Settings.Default.OperatorPath, "*.operator");
+            foreach(string operatorFile in operatorFiles)
+            {
+                try
+                {
+                    CSharpCodeProvider csCompiler = new CSharpCodeProvider();
+                    CodeDomProvider iCodeCompiler = CSharpCodeProvider.CreateProvider("C#");
+
+                    CompilerParameters par = new System.CodeDom.Compiler.CompilerParameters();
+                    par.GenerateInMemory = true;
+                    par.GenerateExecutable = false;
+                    par.ReferencedAssemblies.Add("System.dll");
+                    par.ReferencedAssemblies.Add("dc.exe");
+                    par.CompilerOptions = "/target:library";
+
+                    StreamReader reader = new StreamReader(operatorFile);
+                    string content = reader.ReadToEnd();
+                    reader.Close();
+                    CompilerResults res = iCodeCompiler.CompileAssemblyFromSource(par, new string[] { content });
+                    foreach(string s in res.Output)
+                    {
+                        log = log + s + "\r\n";
+                    }
+
+                    Assembly asm = res.CompiledAssembly;
+                    if(asm != null)
+                    {
+                        foreach(Type type in asm.GetExportedTypes())
+                        {
+                            if(type.IsSubclassOf(typeof(Operator)))
+                            {
+                                parser.AddOperator(type);
+                            }
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    log += ex.Message + "\r\n";
+                }
+            }
 		}
 
 		/// <summary>
