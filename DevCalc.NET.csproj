@@ -94,6 +94,8 @@
     <Compile Include="Constant.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="OperatorTangens.cs" />
+    <Compile Include="OperatorCosinus.cs" />
     <Compile Include="FormHelp.cs">
       <SubType>Form</SubType>
     </Compile>

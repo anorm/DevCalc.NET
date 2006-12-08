@@ -43,6 +43,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -59,6 +70,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -154,14 +176,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DevCalc.NET"
-        "ProductCode" = "8:{AB5C3CD8-4C71-4B84-A00A-93AD48E13614}"
-        "PackageCode" = "8:{775BC121-8439-4062-B01D-07D24753469F}"
+        "ProductCode" = "8:{89A1DD93-7431-444E-B0C9-22FAD43D9B71}"
+        "PackageCode" = "8:{AFF4B942-0E84-4648-8733-30239830ED4B}"
         "UpgradeCode" = "8:{F69DB851-D994-4CE8-8478-190A13774A4D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:norman.info"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

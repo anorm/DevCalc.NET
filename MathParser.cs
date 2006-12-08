@@ -30,6 +30,8 @@ namespace DevCalcNET
             AddOperator(typeof(OperatorPI));
             AddOperator(typeof(OperatorE));
             AddOperator(typeof(OperatorSinus));
+            AddOperator(typeof(OperatorCosinus));
+            AddOperator(typeof(OperatorTangens));
             AddOperator(typeof(OperatorLn));
             AddOperator(typeof(OperatorLog2));
             AddOperator(typeof(OperatorLog));
