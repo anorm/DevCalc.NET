@@ -35,6 +35,8 @@ namespace DevCalcNET
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
+
+            Text = Application.ProductName + " v" + Application.ProductVersion;
 			parser = new MathParser();
             log = "";
 
