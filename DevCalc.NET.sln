@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevCalc.NET", "DevCalc.NET\
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{FF3274DD-407C-4DF7-8EED-B4B96ED3DA68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupHelper", "SetupHelper\SetupHelper.csproj", "{740E4EE8-925D-49AF-BB1C-FEBD8C196929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{FF3274DD-407C-4DF7-8EED-B4B96ED3DA68}.Debug|Any CPU.Build.0 = Debug
 		{FF3274DD-407C-4DF7-8EED-B4B96ED3DA68}.Release|Any CPU.ActiveCfg = Release
 		{FF3274DD-407C-4DF7-8EED-B4B96ED3DA68}.Release|Any CPU.Build.0 = Release
+		{740E4EE8-925D-49AF-BB1C-FEBD8C196929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740E4EE8-925D-49AF-BB1C-FEBD8C196929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740E4EE8-925D-49AF-BB1C-FEBD8C196929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740E4EE8-925D-49AF-BB1C-FEBD8C196929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

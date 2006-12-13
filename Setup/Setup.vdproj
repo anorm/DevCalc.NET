@@ -21,8 +21,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C980F5BB0F3C46799BC8539C8C1121CD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9FFE55E305D74BED8162A4136B82250E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C980F5BB0F3C46799BC8539C8C1121CD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -87,6 +99,34 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_AB17DCF4A980463784BACD6CE163118B"
+            {
+            "Name" = "8:SetupHelper"
+            "Condition" = "8:"
+            "Object" = "8:_C980F5BB0F3C46799BC8539C8C1121CD"
+            "FileType" = "3:1"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_45E38905_6F3D_469E_8FD1_A419D6356754"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:/loc=\"[TARGETDIR]\\\""
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_F98CC0BE55BE42CD9DB23292E06C2FDD"
+            {
+            "Name" = "8:SerupHelper"
+            "Condition" = "8:"
+            "Object" = "8:_C980F5BB0F3C46799BC8539C8C1121CD"
+            "FileType" = "3:1"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_D4E5AF3F_2C72_4A2E_AFC4_30A615122761"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:/loc=\"[TARGETDIR]\\\""
+            }
         }
         "DefaultFeature"
         {
@@ -118,7 +158,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_5156919332E64751A24C0ACF5BEBDDAF"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -176,20 +216,20 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DevCalc.NET"
-        "ProductCode" = "8:{89A1DD93-7431-444E-B0C9-22FAD43D9B71}"
-        "PackageCode" = "8:{AFF4B942-0E84-4648-8733-30239830ED4B}"
+        "ProductCode" = "8:{CF4A4F63-0B07-4070-A63D-3EAE1F0B9455}"
+        "PackageCode" = "8:{4019D419-512D-42C5-B493-698020040BBC}"
         "UpgradeCode" = "8:{F69DB851-D994-4CE8-8478-190A13774A4D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.0"
-        "Manufacturer" = "8:norman.info"
+        "ProductVersion" = "8:1.1.1"
+        "Manufacturer" = "8:Anders Norman"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:DevCalc.NET"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:norman.info"
+        "ARPCONTACT" = "8:Anders Norman"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -217,20 +257,6 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_745C52EA21D644239C8E57C2F678C5CD"
-                            {
-                            "Name" = "8:[Manufacturer]"
-                            "Condition" = "8:"
-                            "AlwaysCreate" = "11:FALSE"
-                            "DeleteAtUninstall" = "11:FALSE"
-                            "Transitive" = "11:FALSE"
-                                "Keys"
-                                {
-                                }
-                                "Values"
-                                {
-                                }
-                            }
                         }
                         "Values"
                         {
@@ -251,20 +277,6 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_FA249AA49A784013A1B0658AE6752D38"
-                            {
-                            "Name" = "8:[Manufacturer]"
-                            "Condition" = "8:"
-                            "AlwaysCreate" = "11:FALSE"
-                            "DeleteAtUninstall" = "11:FALSE"
-                            "Transitive" = "11:FALSE"
-                                "Keys"
-                                {
-                                }
-                                "Values"
-                                {
-                                }
-                            }
                         }
                         "Values"
                         {
@@ -711,7 +723,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9FFE55E305D74BED8162A4136B82250E"
             {
-            "SourcePath" = "8:..\\DevCalc.NET\\obj\\Debug\\DevCalc.NET.exe"
+            "SourcePath" = "8:..\\DevCalc.NET\\obj\\Debug\\dc.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
@@ -732,6 +744,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{B50D0154-09DE-48DA-A42E-796F0D350F7E}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C980F5BB0F3C46799BC8539C8C1121CD"
+            {
+            "SourcePath" = "8:..\\SetupHelper\\obj\\Debug\\SetupHelper.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{740E4EE8-925D-49AF-BB1C-FEBD8C196929}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
