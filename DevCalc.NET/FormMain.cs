@@ -206,21 +206,6 @@ namespace DevCalcNET
 		}
 		#endregion
 
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main() 
-		{
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            if(ApplicationInstanceLimiter.Limit())
-			{
-				return;
-			}
-			Application.Run(new FormMain());
-		}
-
 		private void txtInput_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
 			if(e.KeyData == Keys.Enter)

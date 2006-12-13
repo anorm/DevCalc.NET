@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_CA2535A942384E8587959A1FAA64318B"
+        "MsmKey" = "8:_9FFE55E305D74BED8162A4136B82250E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CA2535A942384E8587959A1FAA64318B"
+        "OwnerKey" = "8:_9FFE55E305D74BED8162A4136B82250E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -296,18 +296,18 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E9EE099B482D4663B03C0B68C61C1F7B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0FCC740F7F4B421C83193E3068412309"
             {
             "Name" = "8:DevCalc.NET"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:32512"
+            "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_CA2535A942384E8587959A1FAA64318B"
+            "Target" = "8:_9FFE55E305D74BED8162A4136B82250E"
             "Folder" = "8:_10CA0B3F67764246A687DCF01B3208E1"
             "WorkingFolder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
-            "Icon" = "8:_CA2535A942384E8587959A1FAA64318B"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -709,9 +709,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CA2535A942384E8587959A1FAA64318B"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9FFE55E305D74BED8162A4136B82250E"
             {
-            "SourcePath" = "8:..\\obj\\Release\\dc.exe"
+            "SourcePath" = "8:..\\DevCalc.NET\\obj\\Debug\\DevCalc.NET.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
@@ -731,7 +731,7 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{BD2EAA9A-DCB7-4F8B-87C8-B64D1222ED08}"
+            "OutputProjectGuid" = "8:{B50D0154-09DE-48DA-A42E-796F0D350F7E}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
