@@ -170,7 +170,7 @@ namespace DevCalcNET
             }
             if (val.StartsWith("0x"))
             {
-                return new Constant(int.Parse(val.Remove(0, 2), System.Globalization.NumberStyles.HexNumber));
+                return new Constant(Int64.Parse(val.Remove(0, 2), System.Globalization.NumberStyles.HexNumber));
             }
             else if (val.StartsWith("0b"))
             {

@@ -216,14 +216,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DevCalc.NET"
-        "ProductCode" = "8:{CF4A4F63-0B07-4070-A63D-3EAE1F0B9455}"
-        "PackageCode" = "8:{4019D419-512D-42C5-B493-698020040BBC}"
+        "ProductCode" = "8:{957C2135-545F-4E0F-8F32-35BA34954BB4}"
+        "PackageCode" = "8:{060C4106-8967-4182-AE38-4024BD2186F0}"
         "UpgradeCode" = "8:{F69DB851-D994-4CE8-8478-190A13774A4D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.1"
+        "ProductVersion" = "8:1.2"
         "Manufacturer" = "8:Anders Norman"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -723,7 +723,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9FFE55E305D74BED8162A4136B82250E"
             {
-            "SourcePath" = "8:..\\DevCalc.NET\\obj\\Debug\\dc.exe"
+            "SourcePath" = "8:..\\DevCalc.NET\\obj\\Release\\dc.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
@@ -751,7 +751,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C980F5BB0F3C46799BC8539C8C1121CD"
             {
-            "SourcePath" = "8:..\\SetupHelper\\obj\\Debug\\SetupHelper.dll"
+            "SourcePath" = "8:..\\SetupHelper\\obj\\Release\\SetupHelper.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"

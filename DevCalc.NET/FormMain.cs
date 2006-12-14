@@ -252,13 +252,30 @@ namespace DevCalcNET
             try
             {
                 double dResult = parser.Parse(expression);
-                int iResult = (int)dResult;
-
-                ret += string.Format("{0,-16} (0x{1:X})", dResult, iResult);
+                Int64 iResult = (Int64)Math.Round(dResult);
+                string bResult = string.Format("{0:X}", iResult);
+                bResult = bResult.Replace('0', 'o').Replace('1', 'i');
+                bResult = bResult.Replace("o", "0000 ");
+                bResult = bResult.Replace("i", "0001 ");
+                bResult = bResult.Replace("2", "0010 ");
+                bResult = bResult.Replace("3", "0011 ");
+                bResult = bResult.Replace("4", "0100 ");
+                bResult = bResult.Replace("5", "0101 ");
+                bResult = bResult.Replace("6", "0110 ");
+                bResult = bResult.Replace("7", "0111 ");
+                bResult = bResult.Replace("8", "1000 ");
+                bResult = bResult.Replace("9", "1001 ");
+                bResult = bResult.Replace("A", "1010 ");
+                bResult = bResult.Replace("B", "1011 ");
+                bResult = bResult.Replace("C", "1100 ");
+                bResult = bResult.Replace("D", "1101 ");
+                bResult = bResult.Replace("E", "1110 ");
+                bResult = bResult.Replace("F", "1111 ");
+                ret += string.Format("{0,-16}\r\n = 0x{1:X}\r\n = 0b{2}", dResult, iResult, bResult);
             }
             catch
             {
-                ret += "?";
+                ret += "?\r\n = ?\r\n = ?";
             }
             ret += "\r\n\r\n";
             return ret;
