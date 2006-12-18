@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Text.RegularExpressions;
 
 namespace DevCalcNET
 {
@@ -26,16 +27,18 @@ namespace DevCalcNET
         {
             operators.Clear();
 
-            AddOperator(typeof(OperatorKurs));
             AddOperator(typeof(OperatorPI));
             AddOperator(typeof(OperatorE));
             AddOperator(typeof(OperatorSinus));
             AddOperator(typeof(OperatorCosinus));
             AddOperator(typeof(OperatorTangens));
+            AddOperator(typeof(OperatorRound));
+            AddOperator(typeof(OperatorCeiling));
+            AddOperator(typeof(OperatorFloor));
             AddOperator(typeof(OperatorLn));
             AddOperator(typeof(OperatorLog2));
             AddOperator(typeof(OperatorLog));
-            AddOperator(typeof(OperatorTverrsum));
+            AddOperator(typeof(OperatorDigitSum));
             AddOperator(typeof(OperatorSqrt));
             AddOperator(typeof(OperatorPower));
             AddOperator(typeof(OperatorDivide));
@@ -73,13 +76,17 @@ namespace DevCalcNET
 
             string exp = expression;
 
-            foreach (OperatorData op in operators)
+            /*foreach (OperatorData op in operators)
             {
                 string s = op.symbol;
                 exp = exp.Replace(s, " " + s + " ");
-            }
+            }*/
             exp = exp.Replace("(", " ( ");
             exp = exp.Replace(")", " ) ");
+            exp = exp.Replace("+", " + ");
+            exp = exp.Replace("-", " - ");
+            exp = exp.Replace("*", " * ");
+            exp = exp.Replace("/", " / ");
 
             string[] parts = exp.Split(' ');
             for (int i = 0; i < parts.Length; i++)

@@ -1,0 +1,40 @@
+using System;
+using System.Xml.XPath;
+
+[DevCalcNET.SymbolAttribute("exchange")]
+[DevCalcNET.OperandCountAttribute(1)]
+public class OperatorTest : DevCalcNET.Operator
+{
+	static XPathDocument doc = null;
+
+	public OperatorTest()
+	{
+		if(doc == null)
+		{
+			string url = "https://www.dnbnor.no/portalfront/datafiles/miscellaneous/csv/kursliste_ws.xml";
+			doc = new XPathDocument(url);
+		}
+	}
+
+	private double GetVal(string path)
+	{
+		double val;
+		XPathNavigator nav = doc.CreateNavigator();
+		
+		XPathNodeIterator iter = nav.Select(path);
+		if(!iter.MoveNext()) throw new Exception("Unable to find symbol");
+		val = double.Parse(iter.Current.Value.Replace('.', System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+		
+		return val;
+	}
+	
+	public override double Evaluate()
+	{
+		string symbol = Children[0].ToString();
+		
+		double price = GetVal("/valuta/valutakurs[kode='" + symbol + "']/seddel/salg");
+		double unit  = GetVal("/valuta/valutakurs[kode='" + symbol + "']/enhet");
+		
+		return price/unit;
+	}
+}

@@ -38,6 +38,9 @@
   <ItemGroup>
     <Compile Include="ApplicationInstanceLimiter.cs" />
     <Compile Include="Constant.cs" />
+    <Compile Include="OperatorCeiling.cs" />
+    <Compile Include="OperatorFloor.cs" />
+    <Compile Include="OperatorRound.cs" />
     <Compile Include="FormHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,9 +67,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="OperatorE.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="OperatorKurs.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="OperatorLn.cs">
@@ -102,7 +102,7 @@
     <Compile Include="OperatorTangens.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="OperatorTverrsum.cs">
+    <Compile Include="OperatorDigitSum.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -125,6 +125,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -42,7 +42,8 @@ namespace DevCalcNET
 
             txtInput.Text = "help";
 
-            string[] operatorFiles = Directory.GetFiles(Properties.Settings.Default.OperatorPath, "*.operator");
+            FileInfo info = new FileInfo(Application.ExecutablePath);
+            string[] operatorFiles = Directory.GetFiles(info.DirectoryName, "*.operator");
             foreach(string operatorFile in operatorFiles)
             {
                 try
@@ -54,7 +55,8 @@ namespace DevCalcNET
                     par.GenerateInMemory = true;
                     par.GenerateExecutable = false;
                     par.ReferencedAssemblies.Add("System.dll");
-                    par.ReferencedAssemblies.Add("dc.exe");
+                    par.ReferencedAssemblies.Add("System.Xml.dll");
+                    par.ReferencedAssemblies.Add(Application.ExecutablePath);
                     par.CompilerOptions = "/target:library";
 
                     StreamReader reader = new StreamReader(operatorFile);
@@ -290,18 +292,21 @@ namespace DevCalcNET
         {
             FormHelp frm = new FormHelp();
             frm.HelpText = "Available operators:\r\n";
-            frm.HelpText += "  +    - Add" + "\r\n";
-            frm.HelpText += "  -    - Subtract" + "\r\n";
-            frm.HelpText += "  *    - Multiply" + "\r\n";
-            frm.HelpText += "  /    - Divide" + "\r\n";
-            frm.HelpText += "  ^    - Power" + "\r\n";
-            frm.HelpText += "  sqrt - Square root" + "\r\n";
-            frm.HelpText += "  sin  - Sinus" + "\r\n";
-            frm.HelpText += "  ln   - Logarithm (base e)" + "\r\n";
-            frm.HelpText += "  lb   - Logarithm (base 2)" + "\r\n";
-            frm.HelpText += "  log  - Logarithm (base 10)" + "\r\n";
-            frm.HelpText += "  tsum - Tverrsum" + "\r\n";
-            frm.HelpText += "  kurs - Exchange (parameter is USD/EUR/SEK etc." + "\r\n";
+            frm.HelpText += "  +        - Add" + "\r\n";
+            frm.HelpText += "  -        - Subtract" + "\r\n";
+            frm.HelpText += "  *        - Multiply" + "\r\n";
+            frm.HelpText += "  /        - Divide" + "\r\n";
+            frm.HelpText += "  ^        - Power" + "\r\n";
+            frm.HelpText += "  sqrt     - Square root" + "\r\n";
+            frm.HelpText += "  sin      - Sinus" + "\r\n";
+            frm.HelpText += "  ln       - Logarithm (base e)" + "\r\n";
+            frm.HelpText += "  lb       - Logarithm (base 2)" + "\r\n";
+            frm.HelpText += "  log      - Logarithm (base 10)" + "\r\n";
+            frm.HelpText += "  dsum     - Sum of digits" + "\r\n";
+            frm.HelpText += "  round    - Round" + "\r\n";
+            frm.HelpText += "  floor    - Floor" + "\r\n";
+            frm.HelpText += "  ceiling  - Ceiling" + "\r\n";
+            frm.HelpText += "  exchange - Exchange (parameter is USD/EUR/SEK etc." + "\r\n";
             frm.HelpText += "\r\n";
             frm.HelpText += "Constants:\r\n";
             frm.HelpText += "  pi   - 3.14..." + "\r\n";

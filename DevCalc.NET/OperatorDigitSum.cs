@@ -2,20 +2,20 @@ using System;
 
 namespace DevCalcNET
 {
-    [SymbolAttribute("tsum")]
+    [SymbolAttribute("dsum")]
     [OperandCountAttribute(1)]
-    class OperatorTverrsum : Operator
+    class OperatorDigitSum : Operator
 	{
 		public override double Evaluate()
 		{
-			int i = (int)Children[0].Evaluate();
+            Int64 i = (Int64)Math.Round(Children[0].Evaluate());
 			return (double)Tverrsum(i);
 		}
 
-		private int Tverrsum(int value)
+        private Int64 Tverrsum(Int64 value)
 		{
-			int i = value;
-			int ret = 0;
+            Int64 i = value;
+            Int64 ret = 0;
 			while(i > 0)
 			{
 				ret += (i % 10);
@@ -30,7 +30,7 @@ namespace DevCalcNET
 
 		public override string ToString()
 		{
-			return "tverrsum(" + Children[0].ToString() + ")";
+			return "dsum(" + Children[0].ToString() + ")";
 		}
 
 
