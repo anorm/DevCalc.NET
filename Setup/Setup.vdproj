@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_6419106117CF4C59AB306FBF6D345337"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9FFE55E305D74BED8162A4136B82250E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -150,6 +156,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6419106117CF4C59AB306FBF6D345337"
+            {
+            "SourcePath" = "8:..\\DevCalc.NET\\PluginOperators\\OperatorExchange.operator"
+            "TargetName" = "8:OperatorExchange.operator"
+            "Tag" = "8:"
+            "Folder" = "8:_5156919332E64751A24C0ACF5BEBDDAF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -217,7 +243,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DevCalc.NET"
         "ProductCode" = "8:{957C2135-545F-4E0F-8F32-35BA34954BB4}"
-        "PackageCode" = "8:{060C4106-8967-4182-AE38-4024BD2186F0}"
+        "PackageCode" = "8:{16180980-794D-4E3E-9803-6E406FF9E8A2}"
         "UpgradeCode" = "8:{F69DB851-D994-4CE8-8478-190A13774A4D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
