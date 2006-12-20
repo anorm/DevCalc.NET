@@ -18,6 +18,7 @@ namespace SetupHelper
             base.Install(stateSaver);
             string loc = Context.Parameters["loc"];
             string oldPath = Environment.GetEnvironmentVariable("path", EnvironmentVariableTarget.User);
+            if(oldPath == null) oldPath = "";
             if(!oldPath.EndsWith(";"))
             {
                 oldPath += ";";
@@ -30,6 +31,7 @@ namespace SetupHelper
         {
             string loc = Context.Parameters["loc"];
             string oldPath = Environment.GetEnvironmentVariable("path", EnvironmentVariableTarget.User);
+            if(oldPath == null) oldPath = "";
             string newPath = oldPath.Replace(";" + loc, "");
 
             if(newPath != oldPath)
