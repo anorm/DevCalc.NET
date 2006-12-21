@@ -58,7 +58,7 @@ namespace DevCalcNET
             }
 
             data.symbol = ((SymbolAttribute)attrs[0]).Name;
-            operators.Add(data);
+            operators.Insert(0, data);
         }
 
         public double Parse(string expression)
@@ -88,7 +88,7 @@ namespace DevCalcNET
             exp = exp.Replace("*", " * ");
             exp = exp.Replace("/", " / ");
 
-            string[] parts = exp.Split(' ');
+            string[] parts = exp.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < parts.Length; i++)
             {
                 string part = parts[i];
