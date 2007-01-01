@@ -75,7 +75,7 @@ namespace DevCalcNET
                         {
                             if(type.IsSubclassOf(typeof(Operator)))
                             {
-                                parser.AddOperator(type);
+                                parser.AddOperator(type, true);
                             }
                         }
                     }

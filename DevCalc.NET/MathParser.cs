@@ -27,27 +27,32 @@ namespace DevCalcNET
         {
             operators.Clear();
 
-            AddOperator(typeof(OperatorPI));
-            AddOperator(typeof(OperatorE));
-            AddOperator(typeof(OperatorSinus));
-            AddOperator(typeof(OperatorCosinus));
-            AddOperator(typeof(OperatorTangens));
-            AddOperator(typeof(OperatorRound));
-            AddOperator(typeof(OperatorCeiling));
-            AddOperator(typeof(OperatorFloor));
-            AddOperator(typeof(OperatorLn));
-            AddOperator(typeof(OperatorLog2));
-            AddOperator(typeof(OperatorLog));
-            AddOperator(typeof(OperatorDigitSum));
-            AddOperator(typeof(OperatorSqrt));
-            AddOperator(typeof(OperatorPower));
-            AddOperator(typeof(OperatorDivide));
-            AddOperator(typeof(OperatorMultiply));
-            AddOperator(typeof(OperatorMinus));
-            AddOperator(typeof(OperatorPlus));
+            // Without operands
+            AddOperator(typeof(OperatorPI), false);
+            AddOperator(typeof(OperatorE), false);
+
+            // Unary
+            AddOperator(typeof(OperatorSinus), false);
+            AddOperator(typeof(OperatorCosinus), false);
+            AddOperator(typeof(OperatorTangens), false);
+            AddOperator(typeof(OperatorRound), false);
+            AddOperator(typeof(OperatorCeiling), false);
+            AddOperator(typeof(OperatorFloor), false);
+            AddOperator(typeof(OperatorLn), false);
+            AddOperator(typeof(OperatorLog2), false);
+            AddOperator(typeof(OperatorLog), false);
+            AddOperator(typeof(OperatorDigitSum), false);
+            AddOperator(typeof(OperatorSqrt), false);
+
+            // Binary
+            AddOperator(typeof(OperatorPower), false);
+            AddOperator(typeof(OperatorDivide), false);
+            AddOperator(typeof(OperatorMultiply), false);
+            AddOperator(typeof(OperatorMinus), false);
+            AddOperator(typeof(OperatorPlus), false);
         }
 
-        public void AddOperator(Type operatorType)
+        public void AddOperator(Type operatorType, bool addToTop)
         {
             OperatorData data = new OperatorData();
             data.operatorType = operatorType;
@@ -58,7 +63,14 @@ namespace DevCalcNET
             }
 
             data.symbol = ((SymbolAttribute)attrs[0]).Name;
-            operators.Insert(0, data);
+            if(addToTop)
+            {
+                operators.Insert(0, data);
+            }
+            else
+            {
+                operators.Add(data);
+            }
         }
 
         public double Parse(string expression)
@@ -68,6 +80,12 @@ namespace DevCalcNET
             System.Diagnostics.Debug.WriteLine(node.ToString());
 
             return node.Evaluate();
+        }
+
+        public string ToMathML(string expression)
+        {
+            MathNode node = ParseIntoTree(expression);
+            return "<math xmlns=\"http://www.w3.org/1998/Math/MathML\">" + node.ToMathML() + "</math>";
         }
 
         private MathNode ParseIntoTree(string expression)
@@ -87,6 +105,7 @@ namespace DevCalcNET
             exp = exp.Replace("-", " - ");
             exp = exp.Replace("*", " * ");
             exp = exp.Replace("/", " / ");
+            exp = exp.Replace("^", " ^ ");
 
             string[] parts = exp.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < parts.Length; i++)
