@@ -37,4 +37,9 @@ public class OperatorTest : DevCalcNET.Operator
 		
 		return price/unit;
 	}
+	
+	public override string ToMathML()
+	{
+		return "<mrow><mo>exchange</mo><mo>(</mo>" + Children[0].ToMathML() + "<mo>)</mo></mrow>";
+	}
 }
