@@ -12,5 +12,10 @@ namespace DevCalcNET
 		}
 
 		public abstract double Evaluate();
+
+        public virtual string ToMathML()
+        {
+            return "<ci>" + ToString() + "</ci>";
+        }
 	}
 }

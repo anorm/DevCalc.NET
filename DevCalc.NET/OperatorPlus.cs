@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "(" + Children[0].ToString() + " + " + Children[1].ToString() + ")";
 		}
-	}
+
+        public override string ToMathML()
+        {
+            return "<mrow>" + Children[0].ToMathML() + "<mo>&plus;</mo>" + Children[1].ToMathML() + "</mrow>";
+        }
+    }
 }

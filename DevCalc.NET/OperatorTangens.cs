@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "tan(" + Children[0].ToString() + ")";
 		}
-	}
+        
+        public override string ToMathML()
+        {
+            return "<apply><tan/>" + Children[0].ToMathML() + "</apply>";
+        }
+    }
 }

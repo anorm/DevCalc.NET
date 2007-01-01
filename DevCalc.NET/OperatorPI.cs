@@ -19,5 +19,10 @@ namespace DevCalcNET
 		{
 			return "PI";
 		}
+
+        public override string ToMathML()
+        {
+ 	        return "<mi>&pi;</mi>";
+        }
 	}
 }

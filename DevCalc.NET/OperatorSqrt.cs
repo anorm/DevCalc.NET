@@ -19,5 +19,10 @@ namespace DevCalcNET
 		{
 			return "sqrt(" + Children[0].ToString() + ")";
 		}
-	}
+
+        public override string ToMathML()
+        {
+            return "<apply><root/><degree><ci>&nbsp;</ci></degree>" + Children[0].ToMathML() + "</apply>";
+        }
+    }
 }

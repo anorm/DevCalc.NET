@@ -21,5 +21,10 @@ namespace DevCalcNET
         {
             return "log2(" + Children[0].ToString() + ")";
         }
+
+        public override string ToMathML()
+        {
+            return "<mrow><mo>log2</mo><mo>(</mo>" + Children[0].ToMathML() + "<mo>)</mo></mrow>";
+        }
     }
 }

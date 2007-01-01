@@ -28,5 +28,10 @@ namespace DevCalcNET
         {
             return val;
         }
+
+        public override string ToMathML()
+        {
+            return "<ci>" + val + "</ci>";
+        }
     }
 }

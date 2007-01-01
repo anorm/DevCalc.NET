@@ -20,5 +20,10 @@ namespace DevCalcNET
 		{
 			return string.Format("{0}", val);
 		}
+
+        public override string ToMathML()
+        {
+            return "<mn>" + ToString() + "</mn>";
+        }
 	}
 }

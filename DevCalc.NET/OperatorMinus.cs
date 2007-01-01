@@ -11,4 +11,9 @@ class OperatorMinus : DevCalcNET.Operator
 	{
 		return "(" + Children[0].ToString() + " - " + Children[1].ToString() + ")";
 	}
+
+    public override string ToMathML()
+    {
+        return "<mrow>" + Children[0].ToMathML() + "<mo>&minus;</mo>" + Children[1].ToMathML() + "</mrow>";
+    }
 }

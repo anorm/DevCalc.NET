@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "E";
 		}
-	}
+
+        public override string ToMathML()
+        {
+            return "<mi>e</mi>";
+        }
+    }
 }

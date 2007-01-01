@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "ceiling(" + Children[0].ToString() + ")";
 		}
-	}
+
+        public override string ToMathML()
+        {
+            return "<apply><ceiling/>" + Children[0].ToMathML() + "</apply>";
+        }
+    }
 }

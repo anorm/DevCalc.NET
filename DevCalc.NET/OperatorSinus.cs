@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "sin(" + Children[0].ToString() + ")";
 		}
+
+        public override string ToMathML()
+        {
+            return "<apply><sin/>" + Children[0].ToMathML() + "</apply>";
+        }
 	}
 }

@@ -15,5 +15,10 @@ namespace DevCalcNET
 		{
 			return "cos(" + Children[0].ToString() + ")";
 		}
-	}
+
+        public override string ToMathML()
+        {
+            return "<apply><cos/>" + Children[0].ToMathML() + "</apply>";
+        }
+    }
 }

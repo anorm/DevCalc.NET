@@ -21,5 +21,10 @@ namespace DevCalcNET
         {
             return "ln(" + Children[0].ToString() + ")";
         }
+
+        public override string ToMathML()
+        {
+            return "<apply><ln/>" + Children[0].ToMathML() + "</apply>";
+        }
     }
 }
