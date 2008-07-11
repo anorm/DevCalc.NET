@@ -106,6 +106,8 @@ namespace DevCalcNET
             exp = exp.Replace("*", " * ");
             exp = exp.Replace("/", " / ");
             exp = exp.Replace("^", " ^ ");
+            exp = exp.Replace("<<", " << ");
+            exp = exp.Replace(">>", " >> ");
 
             string[] parts = exp.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < parts.Length; i++)
